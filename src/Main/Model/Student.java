@@ -3,11 +3,11 @@ package Main.Model;
 import java.util.List;
 
 public class Student extends Person{
-    private long studentId;
+    private int studentId;
     private int totalCredits;
     private List<Course> enrolledCourses;
 
-    public Student(String firstName, String lastName, long studentId, int totalCredits, List<Course> enrolledCourses) {
+    public Student(String firstName, String lastName, int studentId, int totalCredits, List<Course> enrolledCourses) {
         super(firstName, lastName);
         this.studentId = studentId;
         this.totalCredits = totalCredits;
@@ -18,7 +18,7 @@ public class Student extends Person{
         return studentId;
     }
 
-    public void setStudentId(long studentId) {
+    public void setStudentId(int studentId) {
         this.studentId = studentId;
     }
 

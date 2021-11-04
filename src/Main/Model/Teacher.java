@@ -4,6 +4,15 @@ import java.util.List;
 
 public class Teacher extends Person{
     private List<Course> courses;
+    private int teacherId;
+
+    public int getTeacherId() {
+        return teacherId;
+    }
+
+    public void setTeacherId(int teacherId) {
+        this.teacherId = teacherId;
+    }
 
     public Teacher(String firstName, String lastName, List<Course> courses) {
         super(firstName, lastName);

@@ -8,9 +8,9 @@ public class Course {
     private int maxEnrollment;
     private List<Student> studentsEnrolled;
     private int credits;
-    private long courseId;
+    private int courseId;
 
-    public Course(String name, Person teacher, int maxEnrollment, List<Student> studentsEnrolled, int credits, long courseId) {
+    public Course(String name, Person teacher, int maxEnrollment, List<Student> studentsEnrolled, int credits, int courseId) {
         this.name = name;
         this.teacher = teacher;
         this.maxEnrollment = maxEnrollment;
@@ -59,11 +59,11 @@ public class Course {
         this.credits = credits;
     }
 
-    public long getCourseId() {
+    public int getCourseId() {
         return courseId;
     }
 
-    public void setCourseId(long courseId) {
+    public void setCourseId(int courseId) {
         this.courseId = courseId;
     }
 }
