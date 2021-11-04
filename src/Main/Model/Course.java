@@ -22,6 +22,8 @@ public class Course {
                 '}';
     }
 
+
+
     public Course(String name, Person teacher, int maxEnrollment, List<Student> studentsEnrolled, int credits, int courseId) {
         this.name = name;
         this.teacher = teacher;

@@ -19,9 +19,10 @@ public class RegistrationSystem {
             List<Course> studentEnrolled = student.getEnrolledCourses();
             courseEnrolled.add(student);
             studentEnrolled.add(course);
+            int studentNewCredits = student.getTotalCredits()+course.getCredits();
             Course courseUpdated = new Course(course.getName(),course.getTeacher(),course.getMaxEnrollment(),courseEnrolled,course.getCredits(),course.getCourseId());
             cr.update(courseUpdated);
-            Student studentUpdated = new Student(student.getFirstName(),student.getLastName(),student.getStudentId(),student.getTotalCredits(),studentEnrolled);
+            Student studentUpdated = new Student(student.getFirstName(),student.getLastName(),student.getStudentId(),studentNewCredits,studentEnrolled);
             sr.update(studentUpdated);
             return true;
 
