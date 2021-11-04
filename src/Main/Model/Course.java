@@ -11,7 +11,7 @@ public class Course {
     private int courseId;
 
     /**
-     * returns the String conversion of the Course type
+     * returns the String conversion of the Course objects
      * @return String
      */
     @Override
@@ -28,7 +28,7 @@ public class Course {
 
 
     /**
-     * Constructor for Course
+     * Constructor for Course objects
      * @param name
      * @param teacher
      * @param maxEnrollment
