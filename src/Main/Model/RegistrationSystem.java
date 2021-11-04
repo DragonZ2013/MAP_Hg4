@@ -21,7 +21,7 @@ public class RegistrationSystem {
     }
 
     List<Student> retrieveStudentsEnrolledForACourse(Course course){
-        return null;
+        return course.getStudentsEnrolled();
     }
 
     List<Course> getAllCourses()
