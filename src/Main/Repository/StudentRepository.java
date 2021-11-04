@@ -2,9 +2,9 @@ package Main.Repository;
 
 import Main.Model.Student;
 
-public class SutdentRepository extends InMemoryRepository<Student>{
+public class StudentRepository extends InMemoryRepository<Student>{
 
-    public SutdentRepository() {
+    public StudentRepository() {
         super();
     }
 
