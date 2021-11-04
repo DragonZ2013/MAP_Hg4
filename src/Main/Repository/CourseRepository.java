@@ -1,14 +1,21 @@
 package Main.Repository;
 
 import Main.Model.Course;
-import Main.Model.Student;
 
 public class CourseRepository extends InMemoryRepository<Course>{
 
+    /**
+     * Constructor for CourseRepository objects
+     */
     public CourseRepository() {
         super();
     }
 
+    /**
+     * Updates a Course object from the Memory Repository array given the ID of the parameter object
+     * @param obj
+     * @return Course -modified object
+     */
     @Override
     public Course update(Course obj) {
         Course courseToUpdate = this.repoList.stream()
