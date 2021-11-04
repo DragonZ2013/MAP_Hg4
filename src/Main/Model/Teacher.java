@@ -6,6 +6,14 @@ public class Teacher extends Person{
     private List<Course> courses;
     private int teacherId;
 
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "courses=" + courses +
+                ", teacherId=" + teacherId +
+                '}';
+    }
+
     public int getTeacherId() {
         return teacherId;
     }

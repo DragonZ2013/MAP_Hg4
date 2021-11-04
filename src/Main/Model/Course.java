@@ -10,6 +10,18 @@ public class Course {
     private int credits;
     private int courseId;
 
+    @Override
+    public String toString() {
+        return "Course{" +
+                "name='" + name + '\'' +
+                ", teacher=" + teacher +
+                ", maxEnrollment=" + maxEnrollment +
+                ", studentsEnrolled=" + studentsEnrolled +
+                ", credits=" + credits +
+                ", courseId=" + courseId +
+                '}';
+    }
+
     public Course(String name, Person teacher, int maxEnrollment, List<Student> studentsEnrolled, int credits, int courseId) {
         this.name = name;
         this.teacher = teacher;

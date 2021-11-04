@@ -14,6 +14,15 @@ public class Student extends Person{
         this.enrolledCourses = enrolledCourses;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentId=" + studentId +
+                ", totalCredits=" + totalCredits +
+                ", enrolledCourses=" + enrolledCourses +
+                '}';
+    }
+
     public long getStudentId() {
         return studentId;
     }
