@@ -20,6 +20,8 @@ public class Student extends Person{
                 "studentId=" + studentId +
                 ", totalCredits=" + totalCredits +
                 ", enrolledCourses=" + enrolledCourses +
+                ", firstName=" + this.getFirstName()+
+                ", lastName=" + this.getLastName()+
                 '}';
     }
 
