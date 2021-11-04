@@ -14,7 +14,19 @@ public class RegistrationSystem {
     StudentRepository sr = new StudentRepository();
 
     boolean register (Course course, Student student){
-        return false;
+        if(course.getMaxEnrollment()>course.getStudentsEnrolled().size()){
+            List<Student> courseEnrolled = course.getStudentsEnrolled();
+            List<Course> studentEnrolled = student.getEnrolledCourses();
+            courseEnrolled.add(student);
+            studentEnrolled.add(course);
+            Course courseUpdated = new Course(course.getName(),course.getTeacher(),course.getMaxEnrollment(),courseEnrolled,course.getCredits(),course.getCourseId());
+            cr.update(courseUpdated);
+            Student studentUpdated = new Student(student.getFirstName(),student.getLastName(),student.getStudentId(),student.getTotalCredits(),studentEnrolled);
+            sr.update(studentUpdated);
+            return true;
+
+        }
+            return false;
     }
 
     List<Course> retrieveCoursesWithFreePlaces(){
