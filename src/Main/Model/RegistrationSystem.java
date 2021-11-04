@@ -26,7 +26,7 @@ public class RegistrationSystem {
 
     List<Course> getAllCourses()
     {
-        return null;
+        return cr.getAll();
     }
 
 }
