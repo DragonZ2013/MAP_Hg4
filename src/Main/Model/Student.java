@@ -1,5 +1,6 @@
 package Main.Model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Student extends Person{
@@ -19,10 +20,17 @@ public class Student extends Person{
         return "Student{" +
                 "studentId=" + studentId +
                 ", totalCredits=" + totalCredits +
-                ", enrolledCourses=" + enrolledCourses +
+                ", enrolledCourses=" + coursesToId() +
                 ", firstName=" + this.getFirstName()+
                 ", lastName=" + this.getLastName()+
                 '}';
+    }
+
+    public List<Integer> coursesToId(){
+        List<Integer> retList = new ArrayList<>();
+        for(Course c : this.enrolledCourses)
+            retList.add(c.getCourseId());
+        return retList;
     }
 
     public int getStudentId() {
