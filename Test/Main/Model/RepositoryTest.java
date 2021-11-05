@@ -1,5 +1,6 @@
 package Main.Model;
 import Main.Repository.CourseRepository;
+import Main.Repository.StudentRepository;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -24,7 +25,22 @@ class RepositoryTest {
         assertEquals(courseRepository.getAll(),Arrays.asList(course3,course2));
         courseRepository.delete(course1);
         assertEquals(courseRepository.getAll(), List.of(course2));
+    }
 
+    @Test
+    void studentRepositoryTest(){
+        StudentRepository studentRepository = new StudentRepository();
+        Student student1 = new Student("Radu","Bogdan",1,10,new ArrayList<>());
+        Student student2 = new Student("Luciana","Oprea",2,20,new ArrayList<>());
+        Student student3 = new Student("Ionel","Palea",1,16,new ArrayList<>());
+        studentRepository.create(student1);
+        assertEquals(studentRepository.getAll(),List.of(student1));
+        studentRepository.create(student2);
+        assertEquals(studentRepository.getAll(),Arrays.asList(student1,student2));
+        studentRepository.update(student3);
+        assertEquals(studentRepository.getAll(),Arrays.asList(student3,student2));
+        studentRepository.delete(student3);
+        assertEquals(studentRepository.getAll(),List.of(student2));
     }
 
 

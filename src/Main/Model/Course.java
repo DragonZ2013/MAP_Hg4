@@ -11,6 +11,11 @@ public class Course {
     private int credits;
     private int courseId;
 
+    /**
+     * Compares the parameters of 2 Course objects
+     * @param o
+     * @return true if the parameters are equal, false otherwise
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

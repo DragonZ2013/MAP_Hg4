@@ -2,6 +2,7 @@ package Main.Model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Student extends Person{
     private int studentId;
@@ -21,6 +22,24 @@ public class Student extends Person{
         this.studentId = studentId;
         this.totalCredits = totalCredits;
         this.enrolledCourses = enrolledCourses;
+    }
+
+    /**
+     * Compares the parameters of 2 Student objects
+     * @param o
+     * @return true if the parameters are equal, false otherwise
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Student)) return false;
+        Student student = (Student) o;
+        return studentId == student.studentId && totalCredits == student.totalCredits && Objects.equals(enrolledCourses, student.enrolledCourses);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(studentId, totalCredits, enrolledCourses);
     }
 
     /**
