@@ -1,6 +1,7 @@
 package Main.Model;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Course {
     private String name;
@@ -9,6 +10,19 @@ public class Course {
     private List<Student> studentsEnrolled;
     private int credits;
     private int courseId;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Course)) return false;
+        Course course = (Course) o;
+        return maxEnrollment == course.maxEnrollment && credits == course.credits && courseId == course.courseId && Objects.equals(name, course.name) && Objects.equals(teacher, course.teacher) && Objects.equals(studentsEnrolled, course.studentsEnrolled);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, teacher, maxEnrollment, studentsEnrolled, credits, courseId);
+    }
 
     /**
      * returns the String conversion of the Course objects
