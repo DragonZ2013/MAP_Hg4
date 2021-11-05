@@ -45,6 +45,7 @@ class RegistrationSystemTest {
         cr.update(c2);
         assertEquals(rs.getAllCourses(),Arrays.asList(c2));
         c1.setCourseId(2);
+        cr.create(c1);
         assertEquals(rs.getAllCourses(), Arrays.asList(c2,c1));
 
 
