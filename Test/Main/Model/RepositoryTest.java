@@ -1,6 +1,7 @@
 package Main.Model;
 import Main.Repository.CourseRepository;
 import Main.Repository.StudentRepository;
+import Main.Repository.TeacherRepository;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -10,6 +11,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RepositoryTest {
+    /**
+     * Tests for CourseRepository functions
+     */
     @Test
     void courseRepositoryTest(){
         CourseRepository courseRepository = new CourseRepository();
@@ -27,6 +31,9 @@ class RepositoryTest {
         assertEquals(courseRepository.getAll(), List.of(course2));
     }
 
+    /**
+     * Tests for StudentRepository functions
+     */
     @Test
     void studentRepositoryTest(){
         StudentRepository studentRepository = new StudentRepository();
@@ -41,6 +48,25 @@ class RepositoryTest {
         assertEquals(studentRepository.getAll(),Arrays.asList(student3,student2));
         studentRepository.delete(student3);
         assertEquals(studentRepository.getAll(),List.of(student2));
+    }
+
+    /**
+     * Tests for TeacherRepository functions
+     */
+    @Test
+    void teacherRepositoryTest(){
+        TeacherRepository teacherRepository = new TeacherRepository();
+        Teacher teacher1 = new Teacher("Popovici","Ion",new ArrayList<>(),1);
+        Teacher teacher2 = new Teacher("Raul","Postescu",new ArrayList<>(),2);
+        Teacher teacher3 = new Teacher("Laura","Jalea",new ArrayList<>(),1);
+        teacherRepository.create(teacher1);
+        assertEquals(teacherRepository.getAll(),List.of(teacher1));
+        teacherRepository.create(teacher2);
+        assertEquals(teacherRepository.getAll(),Arrays.asList(teacher1,teacher2));
+        teacherRepository.update(teacher3);
+        assertEquals(teacherRepository.getAll(),Arrays.asList(teacher3,teacher2));
+        teacherRepository.delete(teacher3);
+        assertEquals(teacherRepository.getAll(),List.of(teacher2));
     }
 
 
