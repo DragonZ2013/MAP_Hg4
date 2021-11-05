@@ -14,6 +14,55 @@ public class RegistrationSystem {
     StudentRepository sr = new StudentRepository();
 
     /**
+     * getter for cr
+     * @return CourseRepository
+     */
+    public CourseRepository getCr() {
+        return cr;
+    }
+
+    /**
+     * setter for cr
+     * @param cr
+     */
+    public void setCr(CourseRepository cr) {
+        this.cr = cr;
+    }
+
+    /**
+     * getter for tr
+     * @return TeacherRepository
+     */
+    public TeacherRepository getTr() {
+        return tr;
+    }
+
+    /**
+     * setter for tr
+     * @param tr
+     */
+    public void setTr(TeacherRepository tr) {
+        this.tr = tr;
+    }
+
+    /**
+     * getter for sr
+     * @return StudentRepository
+     */
+    public StudentRepository getSr() {
+        return sr;
+    }
+
+    /**
+     * setter for sr
+     * @param sr
+     */
+    public void setSr(StudentRepository sr) {
+        this.sr = sr;
+    }
+
+
+    /**
      * registers a student to a given course, updating credits and respective Lists
      * @param course
      * @param student
