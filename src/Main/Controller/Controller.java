@@ -2,6 +2,7 @@ package Main.Controller;
 
 import Main.Model.Course;
 import Main.Model.Student;
+import Main.Model.Teacher;
 import Main.Repository.CourseRepository;
 import Main.Repository.StudentRepository;
 import Main.Repository.TeacherRepository;
@@ -18,6 +19,46 @@ public class Controller {
         this.cr = cr;
         this.tr = tr;
         this.sr = sr;
+    }
+
+    public CourseRepository getCr() {
+        return cr;
+    }
+
+    public void setCr(CourseRepository cr) {
+        this.cr = cr;
+    }
+
+    public TeacherRepository getTr() {
+        return tr;
+    }
+
+    public void setTr(TeacherRepository tr) {
+        this.tr = tr;
+    }
+
+    public StudentRepository getSr() {
+        return sr;
+    }
+
+    public void setSr(StudentRepository sr) {
+        this.sr = sr;
+    }
+
+    /**WIP - add id validation and exception
+     *
+     * @param s
+     */
+    public void addToStudentRepo(Student s){
+        sr.create(s);
+    }
+
+    public void addToCourseRepo(Course c) {
+        cr.create(c);
+    }
+
+    public  void addToTeacherRepo(Teacher t){
+        tr.create(t);
     }
 
     /**
