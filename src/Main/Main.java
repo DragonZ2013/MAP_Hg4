@@ -1,5 +1,6 @@
 package Main;
 
+import Main.Controller.Controller;
 import Main.Model.Course;
 import Main.Model.Teacher;
 
@@ -17,5 +18,8 @@ public class Main {
         t.setCourses(tempList);
         System.out.println(t);
         System.out.println(c);
+
+        //Controller cont = new Controller();
+        //cont.
     }
 }
