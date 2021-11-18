@@ -31,11 +31,16 @@ public class Controller {
         return retList;
     }
 
-    public List<Student> FilterStudents(){
+    /**
+     * Returns the list of students with more than minCreds credits
+     * @param minCreds
+     * @return retList List<Student>
+     */
+    public List<Student> FilterStudents(int minCreds){
         List<Student> studentList = sr.getAll();
+        List<Student> retList = studentList.stream().filter(o->o.getTotalCredits()>=minCreds).toList();
 
-
-        return studentList;
+        return retList;
     }
 
     /**

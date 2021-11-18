@@ -42,5 +42,6 @@ public class Main {
         System.out.println(cont.SortCourses());
         System.out.println(cont.SortStudents());
         System.out.println(cont.FilterCourses(25));
+        System.out.println(cont.FilterStudents(25));
     }
 }
