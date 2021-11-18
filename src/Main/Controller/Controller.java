@@ -20,11 +20,15 @@ public class Controller {
         this.sr = sr;
     }
 
+    /**
+     * Returns the list of students sorted by their LastName - WIP - FirstName sorting, thenComparing breaks
+     * @return retList List<Student>
+     */
     public List<Student> SortStudents(){
         List<Student> studentList = sr.getAll();
-
-
-        return studentList;
+        Comparator<Student> studentComparator = Comparator.comparing(o -> o.getLastName());//.thenComparing(o -> o.getFirstName());
+        List<Student> retList = studentList.stream().sorted(studentComparator).toList();
+        return retList;
     }
 
     public List<Student> FilterStudents(){
@@ -34,9 +38,13 @@ public class Controller {
         return studentList;
     }
 
+    /**
+     * Returns the list of courses sorted by their credits
+     * @return retList List<Course>
+     */
     public List<Course> SortCourses(){
         List<Course> courseList = cr.getAll();
-        Comparator<Course> courseComparator = (o1, o2) -> Integer.valueOf(o1.getCredits()).compareTo(Integer.valueOf(o2.getCredits()));
+        Comparator<Course> courseComparator = Comparator.comparing(o -> Integer.valueOf(o.getCredits()));
         List<Course> retList = courseList.stream().sorted(courseComparator).toList();
 
 
@@ -45,6 +53,7 @@ public class Controller {
 
     public List<Course> FilterCourses(){
         List<Course> courseList = cr.getAll();
+
 
 
         return courseList;
