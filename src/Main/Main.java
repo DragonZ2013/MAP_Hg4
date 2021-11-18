@@ -41,5 +41,6 @@ public class Main {
         Controller cont = new Controller(cr,null,sr);
         System.out.println(cont.SortCourses());
         System.out.println(cont.SortStudents());
+        System.out.println(cont.FilterCourses(25));
     }
 }

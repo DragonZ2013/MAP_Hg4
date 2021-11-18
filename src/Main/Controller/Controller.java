@@ -51,12 +51,17 @@ public class Controller {
         return retList;
     }
 
-    public List<Course> FilterCourses(){
+    /**
+     * Returns the list of courses with more than minCreds credits
+     * @param minCreds
+     * @return retList List<Course>
+     */
+    public List<Course> FilterCourses(int minCreds){
         List<Course> courseList = cr.getAll();
+        List<Course> retList = courseList.stream().filter(o->o.getCredits()>=minCreds).toList();
 
 
-
-        return courseList;
+        return retList;
     }
 
 }
